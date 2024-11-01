@@ -17,7 +17,7 @@
 rule ASM_COMPILER__picoRoboticCar_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building ASM object $out
 
 
@@ -27,7 +27,7 @@ rule ASM_COMPILER__picoRoboticCar_unscanned_Release
 rule C_COMPILER__picoRoboticCar_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -37,7 +37,7 @@ rule C_COMPILER__picoRoboticCar_unscanned_Release
 rule CXX_COMPILER__picoRoboticCar_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -45,7 +45,7 @@ rule CXX_COMPILER__picoRoboticCar_unscanned_Release
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__picoRoboticCar_Release
-  command = $PRE_LINK && /home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++ $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-g++ $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -64,7 +64,7 @@ rule CUSTOM_COMMAND
 rule ASM_COMPILER__bs2_default_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building ASM object $out
 
 
@@ -72,7 +72,7 @@ rule ASM_COMPILER__bs2_default_unscanned_Release
 # Rule for linking ASM executable.
 
 rule ASM_EXECUTABLE_LINKER__bs2_default_Release
-  command = $PRE_LINK && /home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-gcc $FLAGS -Wl,--build-id=none $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking ASM executable $TARGET_FILE
   restat = $RESTAT
 
@@ -81,7 +81,7 @@ rule ASM_EXECUTABLE_LINKER__bs2_default_Release
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/vscode/.pico-sdk/cmake/v3.28.6/bin/cmake --regenerate-during-build -S/workspaces/picoRoboticCar -B/workspaces/picoRoboticCar/build
+  command = /Users/ileanjr/.pico-sdk/cmake/v3.28.6/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/ileanjr/github/picoRoboticCar -B/Users/ileanjr/github/picoRoboticCar/build
   description = Re-running CMake...
   generator = 1
 
@@ -90,7 +90,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /home/vscode/.pico-sdk/ninja/v1.12.1/ninja $FILE_ARG -t clean $TARGETS
+  command = /Users/ileanjr/.pico-sdk/ninja/v1.12.1/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -98,6 +98,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /home/vscode/.pico-sdk/ninja/v1.12.1/ninja -t targets
+  command = /Users/ileanjr/.pico-sdk/ninja/v1.12.1/ninja -t targets
   description = All primary targets available:
 

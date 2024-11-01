@@ -1,4 +1,4 @@
-# Install script for directory: /home/vscode/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_crt0
+# Install script for directory: /Users/ileanjr/.pico-sdk/sdk/2.0.0/src/rp2_common/pico_crt0
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/vscode/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "/Users/ileanjr/.pico-sdk/toolchain/13_2_Rel1/bin/arm-none-eabi-objdump")
 endif()
 
