@@ -49,7 +49,11 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(picoRoboticCar src/picoRoboticCar.cpp )
+add_executable(picoRoboticCar 
+                    src/picoRoboticCar.cpp
+                    src/MotorControl.cpp
+                    src/VehicleDrive.cpp
+)
 
 pico_set_program_name(picoRoboticCar "picoRoboticCar")
 pico_set_program_version(picoRoboticCar "0.1")
@@ -68,6 +72,7 @@ target_link_libraries(picoRoboticCar
 # Add the standard include files to the build
 target_include_directories(picoRoboticCar PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
+  ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 # Add any user requested libraries
@@ -80,6 +85,7 @@ target_link_libraries(picoRoboticCar
         hardware_timer
         hardware_watchdog
         hardware_clocks
+        hardware_pwm
         )
 
 pico_add_extra_outputs(picoRoboticCar)
