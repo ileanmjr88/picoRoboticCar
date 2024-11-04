@@ -61,6 +61,7 @@ dkms.conf
 
 # Local files
 .DS_Store
+build/
 build/**
 
 

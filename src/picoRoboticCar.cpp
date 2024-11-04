@@ -13,7 +13,7 @@
 int main() {
     stdio_usb_init();
     int delay = 2000;
-    std::array<int, 8> pins = {17, 16, 14, 15, 13, 12, 10, 11};
+    const std::array<int, 8> pins = {17, 16, 14, 15, 13, 12, 10, 11};
     VehicleDrive vehicle = VehicleDrive(pins);
 
     vehicle.forward();
