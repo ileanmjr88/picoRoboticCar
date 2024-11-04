@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.ninja_deps
+*.ninja_log
+*.pio.h
 
 # Object files
 *.o
@@ -27,6 +30,7 @@
 *.so
 *.so.*
 *.dylib
+*.S
 
 # Executables
 *.exe
@@ -35,6 +39,10 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
+*.dis
+*.uf2
+*.uf2.*
 
 # Debug files
 *.dSYM/
@@ -51,12 +59,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Local files
 .DS_Store
-*.bin
-*.dis
-*.uf2
-*.uf2.*
-*.S 
-*.ninja_deps
-*.ninja_log
-*.pio.h
+build/**
+
+
