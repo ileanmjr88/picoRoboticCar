@@ -58,6 +58,7 @@ For this project I have decided to implement as much as possible from scratch us
 ### Documentation
 - [Pico C SDK](https://www.raspberrypi.com/documentation/pico-sdk/)
 - [SunFounder Pico 4WD Car V2.0 Kit](https://docs.sunfounder.com/projects/pico-4wd-v2/en/latest/index.html)
+- [SunFounder Repo](https://github.com/sunfounder/pico_4wd_car/tree/v2.0)
 
 ### Useful Links
 - [Pico Basic PWM](https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html)
