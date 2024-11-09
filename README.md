@@ -30,18 +30,18 @@ For this project I have decided to implement as much as possible from scratch us
 
 ## Todo list
 ### Low Level
-- [ ] Motor Control with PWM
-    - [ ] Clockwise
-    - [ ] Counter clockwise
-    - [ ] Stop
-    - [ ] Variable speed control
+- [x] Motor Control with PWM
+    - [x] Clockwise
+    - [x] Counter clockwise
+    - [x] Stop
+    - [x] Variable speed control
 - [ ] Vehicle Control
-    - [ ] Forward
-    - [ ] Reverse
-    - [ ] Stop
+    - [x] Forward
+    - [x] Reverse
+    - [x] Stop
     - [ ] Left turn
     - [ ] Right turn
-    - [ ] Speed control
+    - [x] Speed control
 - [ ] Wifi module driver
     - [ ] Serial communication
 - [ ] Speed encoder sensor driver
