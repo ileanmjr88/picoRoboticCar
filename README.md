@@ -28,6 +28,29 @@ For this project I have decided to implement as much as possible from scratch us
 - [Install Rasberry Pi Pico extension](https://marketplace.visualstudio.com/items?itemName=raspberry-pi.raspberry-pi-pico)
     - I discovered this extension will do the full installation of the toolchain
 
+## Pin Out
+| Pin Number | Function           |
+|------------|--------------------|
+| 18         | Ultrasonic Servo   |
+| 6          | Ultrasonic Trigger |
+| 7          | Ultrasonic Echo    |
+| 26         | Grayscale S0 - U1  |
+| 27         | Grayscale S1 - U2  |
+| 28         | Grayscale S2 - U3  |
+| 8          | Speed Module Left  |
+| 9          | Speed Module Right |
+| 19         | RGB LED Board      |
+| 4          | Wifi Module TxD    |
+| 5          | Wifi Module RxD    |
+
+| Pin Number | Pin Number | Function                |
+|------------|------------|-------------------------|
+| 17         | 16         | M0 - Front Left Motor   |
+| 15         | 14         | M1 - Front Right Motor  |
+| 13         | 12         | M2 - Rear Left Motor    |
+| 11         | 10         | M3 - Rear Right Motor   |
+
+
 ## Todo list
 ### Low Level
 - [x] Motor Control with PWM
