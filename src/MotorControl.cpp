@@ -1,46 +1,43 @@
-#include "MotorControl.h"
-#include "pico/stdlib.h"
-#include "hardware/pwm.h"
 
-MotorControl::MotorControl(){
-    this->pinA = -1;
-    this->pinB = -1;
-}
+#include "MotorControl.h"
 
 MotorControl::MotorControl(int pinA, int pinB){
     this->pinA = pinA;
     this->pinB = pinB;
+
+    gpio_init(pinA);
+    gpio_set_dir(pinA, GPIO_OUT);
+    gpio_init(pinB);
+    gpio_set_dir(pinB, GPIO_OUT);
+
     this->m_init();
 }
 
-void MotorControl::setPins(int pinA, int pinB){
-    this->pinA = pinA;
-    this->pinB = pinB;
-}
 
 void MotorControl::m_init(){
     // Pin A for H-bridge motor drive
-    gpio_set_function(this->pinA, GPIO_FUNC_PWM);
-    uint slice_numA = pwm_gpio_to_slice_num(this->pinA);
-    uint channelA = pwm_gpio_to_channel(this->pinA);
-
-    // Pin B for H-bridge motor drive
-    gpio_set_function(this->pinB, GPIO_FUNC_PWM);
-    uint slice_numB = pwm_gpio_to_slice_num(this->pinB);
-    uint channelB = pwm_gpio_to_channel(this->pinB);
+    gpio_set_function(pinA, GPIO_FUNC_PWM);
+    pwmSlice = pwm_gpio_to_slice_num(this->pinA);
+    pinChannel = pwm_gpio_to_channel(this->pinA);
+    pwm_set_wrap(pwmSlice, maxSpeed);
+    pwm_set_chan_level(pwmSlice, pinChannel, 0);
+    pwm_set_enabled(pwmSlice, true);
 }
 
-void MotorControl::forward(){
-    gpio_put(this->pinA, true);
-    gpio_put(this->pinB, false);
+void MotorControl::forward(uint16_t speed){
+    pwm_set_chan_level(pwmSlice, pinChannel, speed);
+    gpio_put(pinA, true);
+    gpio_put(pinB, false);
 }
 
-void MotorControl::reverse(){
-    gpio_put(this->pinA, false);
-    gpio_put(this->pinB, true);
+void MotorControl::reverse(uint16_t speed){
+    pwm_set_chan_level(pwmSlice, pinChannel, speed);
+    gpio_put(pinB, true);
+    gpio_put(pinA, false);
 }
 
 void MotorControl::stop(){
-    gpio_put(this->pinA, true);
-    gpio_put(this->pinB, true);
+    pwm_set_chan_level(pwmSlice, pinChannel, 0);
+    gpio_put(pinA, true);
+    gpio_put(pinB, true);
 }
