@@ -2,8 +2,9 @@
 #include "pico/stdlib.h"
 #include "pico/stdio_usb.h"
 #include "hardware/pwm.h"
-#include "../include/VehicleDrive.h"
-#include "../include/MotorControl.h"
+#include "VehicleDrive.h"
+#include "MotorControl.h"
+#include "SpeedEncoder.h"
 #include <array>
 
 // UART defines
@@ -20,20 +21,14 @@ int main(){
     const std::array<MotorPins, 4> pins = {
         {MotorPins{17, 16}, MotorPins{14, 15}, MotorPins{13, 12}, MotorPins{10, 11}}};
 
+    SpeedEncoder speedEncoder(8, 9);
+
     while (!stdio_usb_connected()) { sleep_ms(100); }
 
     VehicleDrive vehicle(pins);
     printf("Vehicle drive initialized\n");
     while (true) {
-        printf("Reverse\n");
-        vehicle.reverse(0xffff);
-        sleep_ms(delay);
-        printf("Stop\n");
-        vehicle.stop();
-        sleep_ms(delay);
-        printf("Forward\n");
-        vehicle.forward(0xffff);
-        sleep_ms(delay);
+
     }
 
     return 0;

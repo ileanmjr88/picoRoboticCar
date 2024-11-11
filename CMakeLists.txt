@@ -53,6 +53,7 @@ add_executable(picoRoboticCar
                     src/picoRoboticCar.cpp
                     src/MotorControl.cpp
                     src/VehicleDrive.cpp
+                    src/SpeedEncoder.cpp
 )
 
 pico_set_program_name(picoRoboticCar "picoRoboticCar")
